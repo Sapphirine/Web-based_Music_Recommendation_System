@@ -1,0 +1,25 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="stylev6.css") }}" />
+    <title>Login</title>
+</head>
+<h1>Use your email to login</h1>
+
+{% if error %}
+    <p><strong>Error:</strong> {{ error }}
+{% endif %}
+
+<body>
+    <div class="form">
+    <form action="{{ url_for('login') }}" method="POST">
+    <dl class="form">
+        <dt>Username(your email):
+        <dd><input type="text" name="email">
+        <dt>Password:
+        <dd><input type="password" name="password">
+        <dd><input type="submit" value="Login">
+    </dl>
+    </form>
+    </div>
+</body>
+</html>

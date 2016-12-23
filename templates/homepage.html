@@ -1,0 +1,60 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="stylev6.css") }}" />
+    <title>Recommendation</title>
+</head>
+<body>
+
+<h1>Welcome to the Music Recommandation System!!</h1>
+
+<div class="user">
+{% if not session.get('logged_in') %}
+    <a href="{{ url_for('login') }}">log in</a>
+    {% if get_flashed_messages() %}
+        <br>{{ get_flashed_messages()[0] }}<br>
+    {% endif %}
+    <a href="{{ url_for('register') }}">register</a>
+{% else %}
+    Welcome back!!
+    <a href="{{ url_for('logout') }}">log out</a>
+{% endif %}
+</div>
+
+<div class="form">
+<form action="{{ url_for('homepage') }}" method="POST">	
+    <tr>
+        <td><a href="http://www.google.com/search?q={{ music[0] }}" target="_blank">{{ music[0] }}</a></td>
+	<br>
+        <td><input type="text" name="ratings0"></td>
+    </tr>
+    <br>
+    <tr>
+        <td><a href="http://www.google.com/search?q={{ music[1] }}" target="_blank">{{ music[1] }}</a></td>
+	<br>
+        <td><input type="text" name="ratings1"></td>
+    </tr>
+    <br>
+    <tr>
+        <td><a href="http://www.google.com/search?q={{ music[2] }}" target="_blank">{{ music[2] }}</a></td>
+	<br>
+        <td><input type="text" name="ratings2"></td>
+    </tr>
+    <br>
+    <tr>
+        <td><a href="http://www.google.com/search?q={{ music[3] }}" target="_blank">{{ music[3] }}</a></td>
+	<br>
+        <td><input type="text" name="ratings3"></td>
+    </tr>
+    <br>
+    <tr>
+        <td><a href="http://www.google.com/search?q={{ music[4] }}" target="_blank">{{ music[4] }}</a></td>
+	<br>
+        <td><input type="text" name="ratings4"></td>
+    </tr>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+</body>
+</html>

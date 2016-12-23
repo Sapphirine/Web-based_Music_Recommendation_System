@@ -1,0 +1,22 @@
+body {
+background-image: url("https://image.freepik.com/free-vector/abstract-blue-background_1048-1511.jpg");
+}
+
+h1{
+	font-weight: 700;
+	font-size: 36px;
+	text-align: center;
+	line-height: 8.0;
+}
+
+div.user{
+	font-size: 18px;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+
+div.form{
+	font-size: 15px;
+	text-align: center;
+}
